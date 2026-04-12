@@ -1,0 +1,467 @@
+﻿/* ============================================================
+   Petit Mot — styles.css
+   Art Nouveau French learning app
+   All colours via CSS variables. No raw hex outside :root.
+   ============================================================ */
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --green:       #5B7355;
+  --green-light: #7A9472;
+  --green-pale:  #E5EBE3;
+  --green-dark:  #3A4A36;
+  --ochre:       #C4956A;
+  --ochre-soft:  #F5ECD8;
+  --ochre-dim:   #9A7A50;
+  --rose:        #C27878;
+  --rose-soft:   #F5E0DD;
+  --cream:       #F2E8D5;
+  --cream-deep:  #E8DCC8;
+  --white:       #FFFFFF;
+  --ink:         #3A4A36;
+  --ink-soft:    #5C5346;
+  --ink-faint:   #8A7A68;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+body {
+  background: var(--cream);
+  color: var(--ink-soft);
+  margin: 0;
+  padding: 0;
+  font-size: max(13px, 1rem);
+}
+
+#app {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+h1, h2, .card-title, .metro-sign-text {
+  font-family: 'Playfair Display', serif;
+}
+
+body, button, label, p {
+  font-family: 'Nunito', sans-serif;
+}
+
+.label {
+  font-size: max(8px, 0.6rem);
+}
+
+/* ── Touch Targets ─────────────────────────────────────────── */
+button, .day-tile, .flashcard, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ── View System ───────────────────────────────────────────── */
+.view {
+  display: none;
+}
+
+.view--active {
+  display: block;
+}
+
+/* ── Splash Screen ─────────────────────────────────────────── */
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 1.75rem;
+  text-align: center;
+  gap: 0.75rem;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+}
+
+.splash h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--green);
+  font-weight: 800;
+  margin: 0.25rem 0 0;
+  letter-spacing: -0.02em;
+  font-style: italic;
+  line-height: 1;
+}
+
+.splash-subtitle {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.splash-tagline {
+  color: var(--ink-faint);
+  font-size: 12px;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 1.25rem;
+}
+
+/* ── Splash Entrance Animation ─────────────────────────────── */
+.splash-element {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.splash-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Commencer Button ──────────────────────────────────────── */
+.btn-commencer {
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 44px;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 16px rgba(91, 115, 85, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-commencer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(91, 115, 85, 0.45);
+}
+
+.btn-commencer:active {
+  transform: translateY(0);
+}
+
+/* ── Metro Sign ────────────────────────────────────────────── */
+.metro-sign {
+  background: var(--rose);
+  border: 3px solid var(--green);
+  border-radius: 5px;
+  padding: 0.4rem 1.25rem;
+  display: inline-block;
+}
+
+.metro-sign-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* ── Fr Tooltip ────────────────────────────────────────────── */
+.fr-tooltip {
+  position: absolute;
+  background: var(--ink);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  pointer-events: none;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+/* ── Splash Dot Separator ──────────────────────────────────── */
+.splash-dots {
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── Splash Feature Pills ──────────────────────────────────── */
+.splash-pills {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.splash-pill {
+  color: var(--ink-faint);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  cursor: help;
+}
+
+/* ── Calendar View ── */
+.calendar-view { padding: 1.5rem; max-width: 460px; margin: 0 auto; }
+.calendar-header { margin-bottom: 1.25rem; }
+.progress-box {
+  background: var(--green-pale);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(91,115,85,0.1);
+}
+.progress-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.progress-label { font-weight: 700; color: var(--green); font-size: 15px; }
+.progress-motivation { color: var(--ink-faint); font-size: 13px; font-style: italic; }
+.progress-track { width: 100%; height: 7px; background: var(--cream-deep); border-radius: 99px; }
+.progress-fill { height: 100%; background: var(--green); border-radius: 99px; transition: width 0.5s; }
+.day-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.day-tile {
+  height: 64px; border-radius: 10px; border: 1px solid var(--cream-deep);
+  background: var(--cream-deep); color: var(--ink-soft);
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px;
+  cursor: pointer; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px;
+  transition: all 0.15s; min-height: 44px; min-width: 44px;
+}
+.day-tile--today {
+  background: var(--white); border: 2.5px solid var(--green);
+  color: var(--green); box-shadow: 0 2px 10px rgba(91,115,85,0.15);
+}
+.day-tile--complete { background: var(--green-pale); color: var(--green); border-color: rgba(91,115,85,0.2); }
+.day-tile--locked { background: var(--cream); color: var(--ink-faint); opacity: 0.5; pointer-events: none; cursor: default; }
+.day-tile__today-label { font-size: 8px; letter-spacing: 0.06em; color: var(--rose); font-weight: 800; }
+.week-preview { margin-top: 1.75rem; text-align: center; }
+.week-preview h3 {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  color: var(--green); font-size: 16px; margin: 1rem 0 0.75rem;
+}
+.week-preview-list { list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 14px; }
+.week-preview-list li { color: var(--ink-faint); }
+.week-preview-list li.current { color: var(--green); font-weight: 700; }
+.week-preview-list .day-num { font-weight: 700; margin-right: 8px; color: var(--ink-soft); }
+.week-preview-list li.current .day-num { color: var(--green); }
+
+/* ── Flashcard View ── */
+.flashcard-view {
+  min-height: 100vh; background: var(--cream);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 1.5rem; font-family: 'Nunito', sans-serif;
+}
+.flashcard-nav {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px; width: 100%; max-width: 360px;
+}
+.btn-back {
+  background: none; border: none; color: var(--green); font-size: 14px;
+  font-family: 'Nunito', sans-serif; font-weight: 700; cursor: pointer;
+  padding: 8px 0; min-height: 44px;
+}
+.flashcard-card {
+  width: 100%; max-width: 320px; border-radius: 20px;
+  background: var(--white); border: 1.5px solid var(--cream-deep);
+  box-shadow: 0 6px 24px rgba(58,74,54,0.08);
+  cursor: pointer; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 2.5rem 1.5rem 2rem; position: relative;
+  transition: background 0.3s, border-color 0.3s; min-height: 220px;
+}
+.flashcard-card--flipped {
+  background: var(--green-pale); border-color: rgba(91,115,85,0.3);
+}
+.flashcard-arch {
+  position: absolute; top: -18px; left: 5%; right: 5%; pointer-events: none;
+}
+.flashcard-emoji { font-size: 48px; margin-top: 16px; margin-bottom: 20px; }
+.flashcard-word {
+  font-family: 'Playfair Display', serif; font-size: 32px;
+  color: var(--green); font-weight: 800; font-style: italic;
+  text-align: center; line-height: 1.15; margin-bottom: 8px;
+}
+.flashcard-hint { color: var(--ink-faint); font-size: 13px; margin-top: 20px; font-style: italic; }
+.flashcard-back { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 8px; }
+.flashcard-english { color: var(--ink-soft); font-size: 18px; font-weight: 600; }
+.flashcard-phonetic {
+  background: var(--ochre-soft); border-radius: 8px; padding: 8px 16px;
+  display: flex; align-items: center; gap: 8px; border: 1px solid rgba(196,149,106,0.2);
+}
+.flashcard-phonetic-text { color: var(--ochre-dim); font-family: monospace; font-size: 15px; font-weight: 600; }
+.flashcard-actions { display: flex; gap: 12px; margin-top: 20px; }
+.btn-encore {
+  background: var(--cream-deep); color: var(--ink-soft); border: none;
+  border-radius: 10px; padding: 14px 24px; min-width: 120px;
+  font-family: 'Nunito', sans-serif; font-weight: 700; cursor: pointer; font-size: 15px;
+  min-height: 44px;
+}
+.btn-compris {
+  background: var(--green); color: var(--white); border: none;
+  border-radius: 10px; padding: 14px 24px; min-width: 120px;
+  font-family: 'Nunito', sans-serif; font-weight: 700; cursor: pointer; font-size: 15px;
+  min-height: 44px;
+}
+.flashcard-dots { display: flex; gap: 6px; margin-top: 18px; }
+.flashcard-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--cream-deep); transition: background 0.3s;
+}
+.flashcard-dot--current { background: var(--green); }
+.flashcard-dot--done { background: var(--green-light); }
+.flashcard-complete {
+  min-height: 100vh; background: var(--cream); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 2rem;
+  font-family: 'Nunito', sans-serif;
+}
+.flashcard-complete h2 {
+  font-family: 'Playfair Display', serif; font-size: 26px;
+  color: var(--green); font-style: italic; margin-top: 14px;
+}
+.btn-lire {
+  margin-top: 20px; background: var(--green); color: var(--white);
+  border: none; border-radius: 8px; padding: 14px 28px;
+  font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 700;
+  cursor: pointer; min-height: 44px;
+}
+
+/* ── Story View ── */
+.story-view {
+  min-height: 100vh; background: var(--cream);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 1.5rem; font-family: 'Nunito', sans-serif;
+}
+.story-header { text-align: center; margin-bottom: 18px; }
+.story-label {
+  font-family: 'Playfair Display', serif; font-size: 12px;
+  color: var(--green); font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; margin: 0 0 6px; display: block;
+}
+.story-title {
+  font-family: 'Playfair Display', serif; font-size: 20px;
+  color: var(--ink); font-style: italic; margin: 0;
+}
+.story-card {
+  background: var(--white); border-radius: 20px;
+  padding: 2.5rem 2rem; width: 100%; max-width: 400px;
+  box-shadow: 0 6px 24px rgba(58,74,54,0.07);
+  border: 1px solid var(--cream-deep);
+  text-align: center; position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  min-height: 200px;
+}
+.story-arch {
+  position: absolute; top: -14px; left: 8%; right: 8%; pointer-events: none;
+}
+.story-sentence {
+  font-family: 'Playfair Display', serif; font-size: 22px;
+  color: var(--ink); font-weight: 700; line-height: 1.55;
+  cursor: pointer; margin-top: 12px; margin-bottom: 18px;
+}
+.story-audio-icon { margin-left: 6px; font-size: 14px; opacity: 0.3; vertical-align: middle; }
+.vocab-highlight {
+  background: var(--ochre-soft); color: var(--ochre-dim);
+  padding: 2px 6px; border-radius: 4px; font-weight: 800;
+  border: 1px solid rgba(196,149,106,0.3);
+}
+.story-translation {
+  color: var(--ink-soft); font-size: 16px; font-style: italic;
+  font-family: 'Playfair Display', serif; margin-top: 8px;
+}
+.btn-voir {
+  background: var(--cream-deep); color: var(--ink-soft);
+  border: 1px solid var(--cream-deep); border-radius: 8px;
+  padding: 10px 20px; font-family: 'Nunito', sans-serif;
+  font-weight: 600; cursor: pointer; font-size: 14px;
+  min-height: 44px; margin-top: 8px;
+}
+.story-dots { display: flex; gap: 6px; margin-top: 18px; }
+.story-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--cream-deep); transition: all 0.3s;
+}
+.story-dot--current { background: var(--green); border: 2.5px solid var(--green-dark); }
+.story-dot--done { background: var(--green-light); }
+.btn-suivant {
+  margin-top: 18px; background: var(--green); color: var(--white);
+  border: none; border-radius: 10px; padding: 14px 32px;
+  font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 700;
+  cursor: pointer; min-width: 160px; min-height: 44px;
+}
+.story-complete {
+  min-height: 100vh; background: var(--cream); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 2rem;
+  font-family: 'Nunito', sans-serif;
+}
+.story-complete h2 {
+  font-family: 'Playfair Display', serif; font-size: 26px;
+  color: var(--green); font-style: italic; margin-top: 14px;
+}
+.btn-retour {
+  margin-top: 20px; background: var(--green); color: var(--white);
+  border: none; border-radius: 8px; padding: 14px 28px;
+  font-size: 15px; font-family: 'Nunito', sans-serif; font-weight: 700;
+  cursor: pointer; min-height: 44px;
+}
+
+/* ── Story Nav (Block 4 addition) ── */
+.story-nav {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px; width: 100%; max-width: 440px;
+}
+
+/* ── Story calendar back link ──────────────────────────────── */
+.btn-cal-link {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  font-size: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0 8px;
+  text-decoration: underline;
+  min-height: 44px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── Journal ── */
+.journal-section {
+  margin: 24px 0; width: 100%; max-width: 400px; text-align: left;
+}
+.journal-heading {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 18px; color: var(--green); margin-bottom: 12px;
+  text-align: center; display: block;
+}
+.journal-controls {
+  display: flex; justify-content: center; gap: 12px; margin-bottom: 16px;
+}
+.btn-journal-play {
+  background: var(--green); color: var(--white); border: none;
+  border-radius: 8px; padding: 10px 24px; min-height: 44px;
+  font-family: 'Nunito', sans-serif; font-weight: 700; cursor: pointer;
+  font-size: 15px;
+}
+.journal-transcript {
+  background: var(--white); border-radius: 16px; padding: 1.5rem;
+  border: 1px solid var(--cream-deep);
+}
+.journal-line {
+  padding: 8px 0; border-bottom: 1px solid var(--cream-deep);
+  font-family: 'Playfair Display', serif; font-size: 16px;
+  color: var(--ink); line-height: 1.5; cursor: pointer;
+}
+.journal-line:last-child { border-bottom: none; }
+.journal-line--active {
+  background: var(--ochre-soft); border-radius: 6px;
+  padding: 8px 10px; margin: 0 -10px;
+}
+.journal-line-en {
+  font-size: 14px; color: var(--ink-faint); font-style: italic;
+  font-family: 'Playfair Display', serif; margin-top: 4px; display: none;
+}
