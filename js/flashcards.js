@@ -61,11 +61,6 @@ window.PetitMot.Flashcards = (function () {
     bannerWrap.appendChild(Ornaments.create('banner', { small: true }));
     wrap.appendChild(bannerWrap);
 
-    // EiffelIcon 44px
-    var eiffelWrap = document.createElement('div');
-    eiffelWrap.appendChild(Ornaments.create('eiffel-icon', { size: '44px' }));
-    wrap.appendChild(eiffelWrap);
-
     // "Magnifique!" heading
     var heading = document.createElement('h2');
     heading.setAttribute('data-fr', 'Magnifique!');

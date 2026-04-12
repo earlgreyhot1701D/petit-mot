@@ -109,10 +109,6 @@ window.PetitMot.Stories = (function () {
     bannerEl.appendChild(window.PetitMot.Ornaments.create('banner', { small: true }));
     wrap.appendChild(bannerEl);
 
-    var eiffelWrap = document.createElement('div');
-    eiffelWrap.appendChild(window.PetitMot.Ornaments.create('eiffel-icon', { size: '44px' }));
-    wrap.appendChild(eiffelWrap);
-
     var h2 = document.createElement('h2');
     h2.setAttribute('data-fr', 'Jour complet!');
     h2.setAttribute('data-en', 'Day complete!');

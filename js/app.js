@@ -66,21 +66,14 @@ window.PetitMot.App = (function () {
     // Collect splash elements for staggered animation
     var elements = [];
 
-    // 1. Banner image (replaces IronArch + EiffelIcon)
+    // 1. Banner image (replaces IronArch + EiffelIcon + h1 title)
     var bannerWrap = document.createElement('div');
     bannerWrap.className = 'splash-element';
     bannerWrap.appendChild(Ornaments.create('banner'));
     splash.appendChild(bannerWrap);
     elements.push(bannerWrap);
 
-    // 2. h1 "petit mot" — lowercase italic per mockup
-    var h1 = document.createElement('h1');
-    h1.className = 'splash-element';
-    h1.textContent = 'petit mot';
-    splash.appendChild(h1);
-    elements.push(h1);
-
-    // 3. Subtitle — uppercase small caps style
+    // 2. Subtitle — uppercase small caps style
     var subtitle = document.createElement('p');
     subtitle.className = 'splash-subtitle splash-element';
     subtitle.setAttribute('data-fr', '30 jours pour lire le français');

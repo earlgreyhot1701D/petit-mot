@@ -1,3 +1,5 @@
+![Le Petit Mot](img/banner.webp)
+
 # petit mot
 
 > *Learn to read Parisian French like a kid, one petit mot at a time.*
