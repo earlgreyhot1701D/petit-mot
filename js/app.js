@@ -184,6 +184,19 @@ window.PetitMot.App = (function () {
       window.PetitMot.Progress.load();
     }
 
+    // Unlock Web Speech API on first user gesture (required on mobile browsers)
+    function unlockAudio() {
+      try {
+        var u = new SpeechSynthesisUtterance('');
+        u.volume = 0;
+        speechSynthesis.speak(u);
+      } catch (e) {}
+      document.removeEventListener('click', unlockAudio);
+      document.removeEventListener('touchstart', unlockAudio);
+    }
+    document.addEventListener('click', unlockAudio, { once: true });
+    document.addEventListener('touchstart', unlockAudio, { once: true });
+
     // Init tooltip component
     if (window.PetitMot.Tooltips && typeof window.PetitMot.Tooltips.init === 'function') {
       window.PetitMot.Tooltips.init();

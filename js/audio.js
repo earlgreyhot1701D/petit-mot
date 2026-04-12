@@ -19,11 +19,12 @@ window.PetitMot.Audio = (function () {
     try {
       var voices = speechSynthesis.getVoices();
       for (var i = 0; i < voices.length; i++) {
-        if (voices[i].lang === 'fr-FR') {
+        if (voices[i].lang === 'fr-FR' || voices[i].lang.startsWith('fr-FR')) {
           frVoice = voices[i];
-          return;
+          break;
         }
       }
+      console.log('[audio] voices found:', voices.length, 'fr-FR:', !!frVoice);
     } catch (e) {
       console.warn('[audio] Error scanning voices:', e);
     }
