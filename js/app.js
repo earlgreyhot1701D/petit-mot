@@ -76,7 +76,7 @@ window.PetitMot.App = (function () {
     // 2. EiffelIcon (~52px — matches mockup proportions)
     var eiffelWrap = document.createElement('div');
     eiffelWrap.className = 'splash-element';
-    eiffelWrap.appendChild(Ornaments.create('eiffel-icon', { size: '120px' }));
+    eiffelWrap.appendChild(Ornaments.create('eiffel-icon', { size: '80px' }));
     splash.appendChild(eiffelWrap);
     elements.push(eiffelWrap);
 
