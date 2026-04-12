@@ -24,13 +24,13 @@ window.PetitMot.Calendar = (function () {
 
   /**
    * Returns the "today" day number:
-   * Day 1 if nothing is complete, otherwise the first incomplete available day (1-7).
-   * Returns 0 if all 7 available days are complete.
+   * First incomplete available day (1-30).
+   * Returns 0 if all days are complete.
    */
   function _getTodayDay() {
     var Progress = window.PetitMot.Progress;
     if (!Progress) return 1;
-    for (var d = 1; d <= 7; d++) {
+    for (var d = 1; d <= 30; d++) {
       if (!Progress.isComplete(d)) return d;
     }
     return 0;
@@ -103,7 +103,7 @@ window.PetitMot.Calendar = (function () {
   function _buildDayTile(dayNumber, todayDay) {
     var Progress = window.PetitMot.Progress;
     var isComplete = Progress ? Progress.isComplete(dayNumber) : false;
-    var isAvailable = dayNumber <= 7;
+    var isAvailable = dayNumber <= 30;  // all days unlocked — full curriculum complete
     var isToday = dayNumber === todayDay;
     var isLocked = !isAvailable;
 

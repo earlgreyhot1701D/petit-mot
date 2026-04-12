@@ -105,7 +105,11 @@ SVG ornaments (iron arch, iron divider, Eiffel Tower, Metro sign) are rendered p
 
 ---
 
-## Curriculum — Week 1
+## Curriculum — All 30 Days
+
+The full 30-day curriculum is complete across 4 weeks, each with a narrative arc.
+
+**Week 1 — First steps in Paris**
 
 | Day | Theme | Scenario |
 |-----|-------|----------|
@@ -115,9 +119,45 @@ SVG ornaments (iron arch, iron divider, Eiffel Tower, Metro sign) are rendered p
 | 4 | La boulangerie | Bread, pastries, numbers 1–5 |
 | 5 | Au musée | Tickets, asking about art, colors |
 | 6 | Les arrondissements | Left/right, numbers 6–10, neighborhoods |
-| 7 | Révision! | Review story using all week 1 vocabulary |
+| 7 | Révision! | Review — all week 1 vocabulary |
 
-Days 8–30 are stubbed and ready for content generation using the same Bedrock pipeline.
+**Week 2 — Finding my rhythm**
+
+| Day | Theme | Scenario |
+|-----|-------|----------|
+| 8 | Au restaurant | Ordering dinner, asking for recommendations |
+| 9 | Le marché | Shopping for food, asking prices, quantities |
+| 10 | Excusez-moi | Asking for help, polite phrases, being lost |
+| 11 | Les couleurs | Describing things, shopping for clothes |
+| 12 | Les chiffres | Numbers 11–20, prices, addresses |
+| 13 | Au jardin | Parks, nature, relaxing outdoors |
+| 14 | Révision! | Review — a full day using all week 2 vocabulary |
+
+**Week 3 — I have favorite spots**
+
+| Day | Theme | Scenario |
+|-----|-------|----------|
+| 15 | Le temps | Weather, seasons, making plans |
+| 16 | Les directions | Navigating confidently, landmarks, near/far |
+| 17 | Au bistro | Casual dining, wine, cheese |
+| 18 | La Seine | The river, bridges, walking along the water |
+| 19 | Les monuments | Famous landmarks, history, taking photos |
+| 20 | Chez le fromager | Specialty cheese shop, asking to try, preferences |
+| 21 | Révision! | Review — a full day exploring Paris |
+
+**Week 4 — Paris feels like home**
+
+| Day | Theme | Scenario |
+|-----|-------|----------|
+| 22 | Faire les courses | Grocery shopping, daily errands |
+| 23 | Le petit déjeuner | Breakfast foods, morning routine |
+| 24 | Au théâtre | Entertainment, buying tickets, expressing opinions |
+| 25 | Les transports | Bus, taxi, getting around the city |
+| 26 | La politesse | Formal greetings, please/thank you variations |
+| 27 | Les émotions | Expressing feelings, happy/sad/tired |
+| 28 | Révision! | Review — reflecting on the journey |
+| 29 | Les adieux | Saying goodbye, making promises, gratitude |
+| 30 | Félicitations! | Celebration, reflection, looking forward |
 
 ---
 
@@ -156,7 +196,6 @@ Or connect the GitHub repo to Vercel and it deploys automatically on push.
 
 ## What's Next (Stubbed)
 
-- **Days 8–30** — Generate via Bedrock using the same prompt pipeline as Days 2–7
 - **Audio journal v2** — Replace Web Speech API with Bedrock TTS (Amazon Polly) for higher quality French narration
 - **Shareable progress card** — Screenshot of completion screen via html2canvas
 
