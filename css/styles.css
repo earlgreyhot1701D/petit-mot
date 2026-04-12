@@ -467,3 +467,14 @@ button, .day-tile, .flashcard, [role="button"] {
   font-size: 14px; color: var(--ink-faint); font-style: italic;
   font-family: 'Playfair Display', serif; margin-top: 4px; display: none;
 }
+
+/* ── Calendar home button ──────────────────────────────────── */
+.btn-home {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  min-height: 44px;
+  min-width: 44px;
+}
