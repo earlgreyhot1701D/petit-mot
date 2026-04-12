@@ -66,28 +66,21 @@ window.PetitMot.App = (function () {
     // Collect splash elements for staggered animation
     var elements = [];
 
-    // 1. IronArch
-    var archWrap = document.createElement('div');
-    archWrap.className = 'splash-element';
-    archWrap.appendChild(Ornaments.create('iron-arch'));
-    splash.appendChild(archWrap);
-    elements.push(archWrap);
+    // 1. Banner image (replaces IronArch + EiffelIcon)
+    var bannerWrap = document.createElement('div');
+    bannerWrap.className = 'splash-element';
+    bannerWrap.appendChild(Ornaments.create('banner'));
+    splash.appendChild(bannerWrap);
+    elements.push(bannerWrap);
 
-    // 2. EiffelIcon (~52px — matches mockup proportions)
-    var eiffelWrap = document.createElement('div');
-    eiffelWrap.className = 'splash-element';
-    eiffelWrap.appendChild(Ornaments.create('eiffel-icon', { size: '80px' }));
-    splash.appendChild(eiffelWrap);
-    elements.push(eiffelWrap);
-
-    // 3. h1 "petit mot" — lowercase italic per mockup
+    // 2. h1 "petit mot" — lowercase italic per mockup
     var h1 = document.createElement('h1');
     h1.className = 'splash-element';
     h1.textContent = 'petit mot';
     splash.appendChild(h1);
     elements.push(h1);
 
-    // 4. Subtitle — uppercase small caps style
+    // 3. Subtitle — uppercase small caps style
     var subtitle = document.createElement('p');
     subtitle.className = 'splash-subtitle splash-element';
     subtitle.setAttribute('data-fr', '30 jours pour lire le français');

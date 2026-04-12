@@ -44,12 +44,11 @@ window.PetitMot.Calendar = (function () {
 
     var Ornaments = window.PetitMot.Ornaments;
     if (Ornaments) {
+      // Banner as home button — tapping returns to splash
       var homeBtn = document.createElement('button');
       homeBtn.className = 'btn-home';
       homeBtn.setAttribute('aria-label', 'Home');
-      homeBtn.setAttribute('data-fr', 'petit mot');
-      homeBtn.setAttribute('data-en', 'Home');
-      homeBtn.appendChild(Ornaments.create('metro-sign', { text: 'petit mot' }));
+      homeBtn.appendChild(Ornaments.create('banner', { small: true }));
       homeBtn.addEventListener('click', function () {
         if (window.PetitMot.App && typeof window.PetitMot.App.showView === 'function') {
           window.PetitMot.App.showView('splash');

@@ -56,6 +56,11 @@ window.PetitMot.Flashcards = (function () {
     var wrap = document.createElement('div');
     wrap.className = 'flashcard-complete';
 
+    // Banner at top
+    var bannerWrap = document.createElement('div');
+    bannerWrap.appendChild(Ornaments.create('banner', { small: true }));
+    wrap.appendChild(bannerWrap);
+
     // EiffelIcon 44px
     var eiffelWrap = document.createElement('div');
     eiffelWrap.appendChild(Ornaments.create('eiffel-icon', { size: '44px' }));
@@ -105,6 +110,11 @@ window.PetitMot.Flashcards = (function () {
     var view = document.createElement('div');
     view.className = 'flashcard-view';
 
+    /* ── Banner above card ── */
+    var bannerEl = document.createElement('div');
+    bannerEl.appendChild(Ornaments.create('banner', { small: true }));
+    view.appendChild(bannerEl);
+
     /* ── Back nav ── */
     var nav = document.createElement('div');
     nav.className = 'flashcard-nav';
@@ -140,12 +150,6 @@ window.PetitMot.Flashcards = (function () {
     /* ── Card ── */
     var card = document.createElement('div');
     card.className = 'flashcard-card';
-
-    // IronArch ornament at top of card
-    var archWrap = document.createElement('div');
-    archWrap.className = 'flashcard-arch';
-    archWrap.appendChild(Ornaments.create('iron-arch'));
-    card.appendChild(archWrap);
 
     /* Front face elements */
     var emoji = document.createElement('div');

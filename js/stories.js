@@ -104,6 +104,11 @@ window.PetitMot.Stories = (function () {
     var wrap = document.createElement('div');
     wrap.className = 'story-complete';
 
+    // Banner at top
+    var bannerEl = document.createElement('div');
+    bannerEl.appendChild(window.PetitMot.Ornaments.create('banner', { small: true }));
+    wrap.appendChild(bannerEl);
+
     var eiffelWrap = document.createElement('div');
     eiffelWrap.appendChild(window.PetitMot.Ornaments.create('eiffel-icon', { size: '44px' }));
     wrap.appendChild(eiffelWrap);
@@ -158,6 +163,11 @@ window.PetitMot.Stories = (function () {
     var wrap = document.createElement('div');
     wrap.className = 'story-view';
 
+    // ── Banner above nav ──────────────────────────────────
+    var bannerEl = document.createElement('div');
+    bannerEl.appendChild(window.PetitMot.Ornaments.create('banner', { small: true }));
+    wrap.appendChild(bannerEl);
+
     // ── Primary nav: back to flashcards ───────────────────
     var nav = document.createElement('div');
     nav.className = 'story-nav';
@@ -193,11 +203,6 @@ window.PetitMot.Stories = (function () {
     // ── Story card ────────────────────────────────────────
     var card = document.createElement('div');
     card.className = 'story-card';
-
-    var archWrap = document.createElement('div');
-    archWrap.className = 'story-arch';
-    archWrap.appendChild(window.PetitMot.Ornaments.create('iron-arch'));
-    card.appendChild(archWrap);
 
     var sentenceEl = document.createElement('p');
     sentenceEl.className = 'story-sentence';

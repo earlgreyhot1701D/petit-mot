@@ -271,6 +271,20 @@ window.PetitMot.Ornaments = (function () {
     return div;
   }
 
+  /* ── Banner ────────────────────────────────────────────────
+     Returns an <img> pointing to img/banner.webp.
+     options.small: if true, adds .app-banner--small class
+  ─────────────────────────────────────────────────────────── */
+  function createBanner(options) {
+    var opts = options || {};
+    var img = document.createElement('img');
+    img.src = 'img/banner.webp';
+    img.alt = 'Le Petit Mot';
+    img.className = opts.small ? 'app-banner app-banner--small' : 'app-banner';
+    img.setAttribute('draggable', 'false');
+    return img;
+  }
+
   /* ── Public API ─────────────────────────────────────────── */
   function create(type, options) {
     switch (type) {
@@ -278,6 +292,7 @@ window.PetitMot.Ornaments = (function () {
       case 'iron-divider': return createIronDivider(options);
       case 'eiffel-icon':  return createEiffelIcon(options);
       case 'metro-sign':   return createMetroSign(options);
+      case 'banner':       return createBanner(options);
       default:
         console.warn('[ornaments] Unknown type:', type);
         return document.createElement('span');

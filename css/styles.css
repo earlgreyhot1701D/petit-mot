@@ -478,3 +478,20 @@ button, .day-tile, .flashcard, [role="button"] {
   min-height: 44px;
   min-width: 44px;
 }
+
+/* ── App Banner ────────────────────────────────────────────── */
+.app-banner {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+
+.app-banner--small {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.75rem;
+}
