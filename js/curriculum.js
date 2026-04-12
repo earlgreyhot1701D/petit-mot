@@ -32,13 +32,14 @@ window.PetitMot.curriculum = [
     journal: {
       title: "Le petit journal de Paris — Jour 1",
       lines: [
-        { fr: "Bonjour! Je suis à Paris aujourd'hui.", en: "Hello! I am in Paris today.", highlight: "bonjour" },
-        { fr: "Les rues sont belles. Le ciel est bleu.", en: "The streets are beautiful. The sky is blue.", highlight: "" },
-        { fr: "Je dis bonjour à tout le monde.", en: "I say hello to everyone.", highlight: "bonjour" },
+        { fr: "Je suis à Paris. Je suis vraiment à Paris!", en: "I am in Paris. I am really in Paris!", highlight: "" },
+        { fr: "Les rues sont grandes. Les immeubles sont beaux.", en: "The streets are big. The buildings are beautiful.", highlight: "" },
+        { fr: "Je ne connais personne ici. Mais ce n'est pas grave.", en: "I don't know anyone here. But that's okay.", highlight: "" },
+        { fr: "Bonjour, madame! Bonjour, monsieur!", en: "Hello, ma'am! Hello, sir!", highlight: "bonjour" },
         { fr: "Excusez-moi, où est la Seine?", en: "Excuse me, where is the Seine?", highlight: "excusez-moi" },
-        { fr: "Merci, monsieur! Vous êtes gentil.", en: "Thank you, sir! You are kind.", highlight: "merci" },
-        { fr: "Un café, s'il vous plaît.", en: "A coffee, please.", highlight: "s'il vous plaît" },
-        { fr: "Au revoir, Paris. À demain!", en: "Goodbye, Paris. See you tomorrow!", highlight: "au revoir" }
+        { fr: "Merci! Tout le monde est gentil ici.", en: "Thank you! Everyone is kind here.", highlight: "merci" },
+        { fr: "Le soleil se couche. Au revoir, premier jour.", en: "The sun is setting. Goodbye, first day.", highlight: "au revoir" },
+        { fr: "Demain, je vais trouver un café. S'il vous plaît, Paris, soyez douce avec moi.", en: "Tomorrow, I'm going to find a café. Please, Paris, be gentle with me.", highlight: "s'il vous plaît" }
       ]
     }
   },
@@ -66,13 +67,14 @@ window.PetitMot.curriculum = [
     journal: {
       title: "Le petit journal de Paris — Jour 2",
       lines: [
-        { fr: "Bonjour! Aujourd'hui, je vais au café.", en: "Hello! Today, I'm going to the café.", highlight: "café" },
-        { fr: "Je voudrais un café et un croissant.", en: "I would like a coffee and a croissant.", highlight: "voudrais" },
-        { fr: "Le croissant est chaud. C'est délicieux!", en: "The croissant is warm. It's delicious!", highlight: "délicieux" },
-        { fr: "Je regarde les gens dans la rue.", en: "I watch the people in the street.", highlight: "" },
-        { fr: "Excusez-moi, l'addition, s'il vous plaît.", en: "Excuse me, the check, please.", highlight: "addition" },
-        { fr: "C'est trois euros. Merci!", en: "It's three euros. Thank you!", highlight: "" },
-        { fr: "J'aime les cafés de Paris. Au revoir!", en: "I love the cafés of Paris. Goodbye!", highlight: "café" }
+        { fr: "Ce matin, je cherche un café. Il y en a partout!", en: "This morning, I'm looking for a café. They're everywhere!", highlight: "café" },
+        { fr: "Je choisis un petit café au coin de la rue.", en: "I pick a small café on the corner of the street.", highlight: "café" },
+        { fr: "Je voudrais un café et un croissant, s'il vous plaît.", en: "I would like a coffee and a croissant, please.", highlight: "voudrais" },
+        { fr: "Le croissant est chaud. Le beurre fond sur mes doigts.", en: "The croissant is warm. The butter melts on my fingers.", highlight: "croissant" },
+        { fr: "C'est délicieux. Pourquoi est-ce si bon ici?", en: "It's delicious. Why is it so good here?", highlight: "délicieux" },
+        { fr: "Je reste longtemps. Je regarde les gens qui passent.", en: "I stay a long time. I watch the people passing by.", highlight: "" },
+        { fr: "L'addition, s'il vous plaît. Le serveur sourit.", en: "The check, please. The waiter smiles.", highlight: "addition" },
+        { fr: "Je crois que j'ai trouvé mon café.", en: "I think I've found my café.", highlight: "" }
       ]
     }
   },
@@ -100,13 +102,13 @@ window.PetitMot.curriculum = [
     journal: {
       title: "Le petit journal de Paris — Jour 3",
       lines: [
-        { fr: "Bonjour! Je prends le métro aujourd'hui.", en: "Hello! I'm taking the subway today.", highlight: "métro" },
-        { fr: "Un billet, s'il vous plaît.", en: "A ticket, please.", highlight: "billet" },
-        { fr: "Le métro est rapide. J'aime le métro!", en: "The subway is fast. I love the subway!", highlight: "métro" },
-        { fr: "Excusez-moi, où est la sortie?", en: "Excuse me, where is the exit?", highlight: "sortie" },
-        { fr: "C'est à gauche? Non, à droite!", en: "It's to the left? No, to the right!", highlight: "gauche" },
-        { fr: "Je voudrais un croissant à la boulangerie.", en: "I would like a croissant at the bakery.", highlight: "" },
-        { fr: "Merci, Paris. Tu es magnifique!", en: "Thank you, Paris. You are magnificent!", highlight: "" }
+        { fr: "Aujourd'hui, le métro. J'ai un peu peur.", en: "Today, the subway. I'm a little scared.", highlight: "métro" },
+        { fr: "Un billet, s'il vous plaît. La machine est compliquée.", en: "A ticket, please. The machine is complicated.", highlight: "billet" },
+        { fr: "Les portes s'ouvrent. Tout le monde sait où aller sauf moi.", en: "The doors open. Everyone knows where to go except me.", highlight: "" },
+        { fr: "Excusez-moi, où est la sortie? À gauche? Merci!", en: "Excuse me, where is the exit? To the left? Thank you!", highlight: "sortie" },
+        { fr: "Non, non. C'est à droite. J'apprends.", en: "No, no. It's to the right. I'm learning.", highlight: "droite" },
+        { fr: "Je sors à la lumière. Le ciel est bleu.", en: "I come out into the light. The sky is blue.", highlight: "" },
+        { fr: "Le métro n'est pas si difficile. Demain, je n'aurai pas peur.", en: "The subway isn't so hard. Tomorrow, I won't be scared.", highlight: "métro" }
       ]
     }
   },
@@ -134,13 +136,14 @@ window.PetitMot.curriculum = [
     journal: {
       title: "Le petit journal de Paris — Jour 4",
       lines: [
-        { fr: "Bonjour! La boulangerie ouvre à sept heures.", en: "Hello! The bakery opens at seven o'clock.", highlight: "" },
-        { fr: "Je voudrais du pain et une baguette.", en: "I would like some bread and a baguette.", highlight: "pain" },
-        { fr: "Deux croissants aussi, s'il vous plaît.", en: "Two croissants too, please.", highlight: "deux" },
-        { fr: "Non, trois! J'ai très faim.", en: "No, three! I'm very hungry.", highlight: "trois" },
-        { fr: "C'est combien? Cinq euros? Merci!", en: "How much is it? Five euros? Thank you!", highlight: "combien" },
-        { fr: "La baguette est chaude. C'est délicieux!", en: "The baguette is warm. It's delicious!", highlight: "baguette" },
-        { fr: "Je mange dans le jardin. C'est beau.", en: "I eat in the garden. It's beautiful.", highlight: "" }
+        { fr: "Six heures du matin. L'odeur du pain chaud dans la rue.", en: "Six in the morning. The smell of warm bread in the street.", highlight: "pain" },
+        { fr: "La boulangerie est déjà ouverte. Il y a une petite queue.", en: "The bakery is already open. There's a small line.", highlight: "" },
+        { fr: "Bonjour! Une baguette, s'il vous plaît.", en: "Hello! A baguette, please.", highlight: "baguette" },
+        { fr: "Et deux croissants. Non, trois. J'ai très faim.", en: "And two croissants. No, three. I'm very hungry.", highlight: "trois" },
+        { fr: "C'est combien? La dame me sourit.", en: "How much is it? The lady smiles at me.", highlight: "combien" },
+        { fr: "Je mange ma baguette sur un banc. Elle craque sous mes dents.", en: "I eat my baguette on a bench. It crunches under my teeth.", highlight: "baguette" },
+        { fr: "Le parc est calme. Les oiseaux chantent.", en: "The park is calm. The birds are singing.", highlight: "" },
+        { fr: "Je commence à avoir une routine. C'est bien.", en: "I'm starting to have a routine. That's good.", highlight: "" }
       ]
     }
   },
@@ -168,13 +171,14 @@ window.PetitMot.curriculum = [
     journal: {
       title: "Le petit journal de Paris — Jour 5",
       lines: [
-        { fr: "Bonjour! Aujourd'hui, je visite le musée.", en: "Hello! Today, I'm visiting the museum.", highlight: "musée" },
-        { fr: "Un billet, s'il vous plaît. C'est combien?", en: "A ticket, please. How much is it?", highlight: "" },
-        { fr: "Il y a un grand tableau bleu.", en: "There is a big blue painting.", highlight: "bleu" },
-        { fr: "Et un tableau rouge aussi. C'est beau!", en: "And a red painting too. It's beautiful!", highlight: "rouge" },
-        { fr: "Je voudrais un café au café du musée.", en: "I would like a coffee at the museum café.", highlight: "" },
-        { fr: "Ce tableau est magnifique. J'adore les couleurs!", en: "This painting is magnificent. I love the colors!", highlight: "tableau" },
-        { fr: "Au revoir, musée. Merci pour l'art!", en: "Goodbye, museum. Thank you for the art!", highlight: "musée" }
+        { fr: "Aujourd'hui, pas de course. Je visite le musée.", en: "Today, no rushing. I'm visiting the museum.", highlight: "musée" },
+        { fr: "Il y a un grand tableau bleu. Comme le ciel de Paris.", en: "There is a big blue painting. Like the Paris sky.", highlight: "bleu" },
+        { fr: "Et un tableau rouge. Il me fait penser aux toits.", en: "And a red painting. It makes me think of the rooftops.", highlight: "rouge" },
+        { fr: "Je reste devant un petit tableau pendant longtemps.", en: "I stand in front of a small painting for a long time.", highlight: "tableau" },
+        { fr: "C'est beau. Je ne sais pas pourquoi, mais j'ai envie de pleurer.", en: "It's beautiful. I don't know why, but I feel like crying.", highlight: "beau" },
+        { fr: "Paris fait ça. Elle vous touche quand vous ne regardez pas.", en: "Paris does that. She touches you when you're not looking.", highlight: "" },
+        { fr: "Au café du musée, je voudrais un café. Mon café préféré.", en: "At the museum café, I would like a coffee. My favorite coffee.", highlight: "" },
+        { fr: "Je suis moins pressée maintenant. Paris m'apprend à ralentir.", en: "I'm less rushed now. Paris is teaching me to slow down.", highlight: "" }
       ]
     }
   },
@@ -202,13 +206,14 @@ window.PetitMot.curriculum = [
     journal: {
       title: "Le petit journal de Paris — Jour 6",
       lines: [
-        { fr: "Bonjour! Paris a vingt arrondissements.", en: "Hello! Paris has twenty districts.", highlight: "arrondissement" },
-        { fr: "Je suis dans le six. C'est joli ici.", en: "I am in the sixth. It's pretty here.", highlight: "six" },
-        { fr: "Le musée est dans le sept. Allons-y!", en: "The museum is in the seventh. Let's go!", highlight: "sept" },
-        { fr: "Tout droit, puis à gauche, puis à droite.", en: "Straight ahead, then left, then right.", highlight: "tout droit" },
-        { fr: "C'est ici! Je voudrais du pain.", en: "It's here! I would like some bread.", highlight: "ici" },
-        { fr: "La boulangerie est dans le six aussi.", en: "The bakery is in the sixth too.", highlight: "six" },
-        { fr: "J'aime mon arrondissement. C'est beau.", en: "I love my district. It's beautiful.", highlight: "arrondissement" }
+        { fr: "Je veux connaître mon arrondissement.", en: "I want to know my district.", highlight: "arrondissement" },
+        { fr: "Je suis dans le six. Les rues sont étroites et jolies.", en: "I am in the sixth. The streets are narrow and pretty.", highlight: "six" },
+        { fr: "Le musée est dans le sept. Je connais le chemin maintenant.", en: "The museum is in the seventh. I know the way now.", highlight: "sept" },
+        { fr: "Tout droit, puis à gauche à la fontaine.", en: "Straight ahead, then left at the fountain.", highlight: "tout droit" },
+        { fr: "La boulangerie est ici, dans ma rue.", en: "The bakery is here, on my street.", highlight: "ici" },
+        { fr: "Le serveur du café me reconnaît. Bonjour! Le habituel?", en: "The waiter at the café recognizes me. Hello! The usual?", highlight: "" },
+        { fr: "Je connais les coins. Je connais les bruits.", en: "I know the corners. I know the sounds.", highlight: "" },
+        { fr: "Ce n'est plus un arrondissement. C'est mon quartier.", en: "It's no longer a district. It's my neighborhood.", highlight: "arrondissement" }
       ]
     }
   },
@@ -236,14 +241,14 @@ window.PetitMot.curriculum = [
     journal: {
       title: "Le petit journal de Paris — Jour 7",
       lines: [
-        { fr: "Bonjour! Aujourd'hui, je pense à ma semaine.", en: "Hello! Today, I think about my week.", highlight: "aujourd'hui" },
-        { fr: "J'aime le café et les croissants du matin.", en: "I love the coffee and the morning croissants.", highlight: "j'aime" },
-        { fr: "Le métro est facile. À gauche, à droite, tout droit!", en: "The subway is easy. Left, right, straight ahead!", highlight: "" },
-        { fr: "La boulangerie sent bon. Deux baguettes, s'il vous plaît!", en: "The bakery smells good. Two baguettes, please!", highlight: "" },
-        { fr: "Le musée est magnifique. Les tableaux sont bleus et rouges.", en: "The museum is magnificent. The paintings are blue and red.", highlight: "magnifique" },
-        { fr: "Allons-y dans le six! Mon arrondissement préféré.", en: "Let's go to the sixth! My favorite district.", highlight: "allons-y" },
-        { fr: "Merci, Paris. À bientôt! Je t'aime.", en: "Thank you, Paris. See you soon! I love you.", highlight: "à bientôt" },
-        { fr: "Au revoir!", en: "Goodbye!", highlight: "" }
+        { fr: "Une semaine à Paris. Sept jours. Ça passe vite.", en: "A week in Paris. Seven days. It goes fast.", highlight: "" },
+        { fr: "Aujourd'hui, je marche sans carte. Je connais le chemin.", en: "Today, I walk without a map. I know the way.", highlight: "aujourd'hui" },
+        { fr: "J'aime mon café du matin. J'aime ma baguette chaude.", en: "I love my morning coffee. I love my warm baguette.", highlight: "j'aime" },
+        { fr: "Le métro n'est plus un mystère. À gauche, à droite, tout droit.", en: "The subway is no longer a mystery. Left, right, straight ahead.", highlight: "" },
+        { fr: "Le musée est mon endroit calme. Les tableaux sont mes amis.", en: "The museum is my quiet place. The paintings are my friends.", highlight: "" },
+        { fr: "Allons-y! Il reste trois semaines. Tant de choses à voir.", en: "Let's go! Three weeks left. So many things to see.", highlight: "allons-y" },
+        { fr: "Paris est magnifique. Et je commence à la comprendre.", en: "Paris is magnificent. And I'm starting to understand her.", highlight: "magnifique" },
+        { fr: "À bientôt, première semaine. Tu étais parfaite.", en: "See you soon, first week. You were perfect.", highlight: "à bientôt" }
       ]
     }
   }
