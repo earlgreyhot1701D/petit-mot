@@ -157,10 +157,7 @@ window.PetitMot.Journal = (function () {
 
       setActive(currentSentence);
 
-      /* Cancel any in-progress utterance */
-      try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
-
-      /* Speak via Audio module */
+      /* Speak via Audio module — Audio.speak() handles cancel internally */
       if (window.PetitMot.Audio && typeof window.PetitMot.Audio.speak === 'function') {
         window.PetitMot.Audio.speak(lines[currentSentence].fr);
       } else {
@@ -175,7 +172,8 @@ window.PetitMot.Journal = (function () {
         }
       }
 
-      /* Poll every 300ms until speechSynthesis is no longer speaking */
+      /* Poll every 300ms until speechSynthesis is no longer speaking.
+         Start after 400ms to allow for audio.js cancel+50ms delay + utterance start. */
       clearPoll();
       pollInterval = setInterval(function () {
         if (!isPlaying) { clearPoll(); return; }

@@ -185,14 +185,13 @@ window.PetitMot.App = (function () {
     }
 
     // Unlock Web Speech API on first user gesture (required on mobile browsers)
+    // Use '.' not '' — iOS Safari ignores empty string utterances
     function unlockAudio() {
       try {
-        var u = new SpeechSynthesisUtterance('');
+        var u = new SpeechSynthesisUtterance('.');
         u.volume = 0;
         speechSynthesis.speak(u);
       } catch (e) {}
-      document.removeEventListener('click', unlockAudio);
-      document.removeEventListener('touchstart', unlockAudio);
     }
     document.addEventListener('click', unlockAudio, { once: true });
     document.addEventListener('touchstart', unlockAudio, { once: true });

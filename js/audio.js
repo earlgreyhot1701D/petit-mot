@@ -19,12 +19,12 @@ window.PetitMot.Audio = (function () {
     try {
       var voices = speechSynthesis.getVoices();
       for (var i = 0; i < voices.length; i++) {
-        if (voices[i].lang === 'fr-FR' || voices[i].lang.startsWith('fr-FR')) {
+        if (voices[i].lang.startsWith('fr')) {
           frVoice = voices[i];
           break;
         }
       }
-      console.log('[audio] voices found:', voices.length, 'fr-FR:', !!frVoice);
+      console.log('[audio] voices found:', voices.length, 'fr voice:', !!frVoice);
     } catch (e) {
       console.warn('[audio] Error scanning voices:', e);
     }
@@ -64,12 +64,14 @@ window.PetitMot.Audio = (function () {
 
       speechSynthesis.cancel();
 
-      var utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'fr-FR';
-      utterance.rate = 0.7;
-      utterance.voice = frVoice;
-
-      speechSynthesis.speak(utterance);
+      // 50ms delay after cancel — iOS Safari drops utterances if speak() is called immediately
+      setTimeout(function () {
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'fr-FR';
+        utterance.rate = 0.7;
+        if (frVoice) utterance.voice = frVoice;
+        speechSynthesis.speak(utterance);
+      }, 50);
     } catch (e) {
       console.warn('[audio] speak() error:', e);
     }
