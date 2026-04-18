@@ -465,7 +465,29 @@ button, .day-tile, .flashcard, [role="button"] {
 }
 .journal-line-en {
   font-size: 14px; color: var(--ink-faint); font-style: italic;
-  font-family: 'Playfair Display', serif; margin-top: 4px; display: none;
+  font-family: 'Playfair Display', serif; margin-top: 4px;
+}
+
+.journal-line-en--dimmed {
+  filter: blur(4px);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: filter 0.3s, opacity 0.3s;
+  user-select: none;
+}
+
+.journal-line-en--revealed {
+  filter: none;
+  opacity: 1;
+  cursor: pointer;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.journal-line-fr {
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
 }
 
 /* ── Calendar home button ──────────────────────────────────── */

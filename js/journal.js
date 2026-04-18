@@ -86,19 +86,56 @@ window.PetitMot.Journal = (function () {
         var lineEl = document.createElement('div');
         lineEl.className = 'journal-line';
 
-        /* French text with vocab highlight */
-        lineEl.appendChild(buildSentenceNode(lineData.fr, lineData.highlight));
+        /* ── French text row: text + audio icon ── */
+        var frRow = document.createElement('div');
+        frRow.className = 'journal-line-fr';
+        frRow.appendChild(buildSentenceNode(lineData.fr, lineData.highlight));
 
-        /* English translation (hidden by default) */
-        var enEl = document.createElement('div');
-        enEl.className = 'journal-line-en';
-        enEl.textContent = lineData.en;
-        lineEl.appendChild(enEl);
+        /* 🔊 audio hint icon */
+        var audioIcon = document.createElement('span');
+        audioIcon.className = 'story-audio-icon';
+        audioIcon.setAttribute('aria-hidden', 'true');
+        audioIcon.textContent = '\uD83D\uDD0A';
+        frRow.appendChild(audioIcon);
 
-        /* Tap to reveal/hide English */
-        lineEl.addEventListener('click', function () {
-          enEl.style.display = (enEl.style.display === 'block') ? 'none' : 'block';
+        /* Tap French row → speak that line.
+           If auto-play is running, stop it first. */
+        frRow.addEventListener('click', function () {
+          if (isPlaying) {
+            clearPoll();
+            try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+            setPlayState();
+          }
+          // Highlight this line
+          for (var k = 0; k < lineElements.length; k++) {
+            lineElements[k].classList.remove('journal-line--active');
+          }
+          lineEl.classList.add('journal-line--active');
+          if (window.PetitMot.Audio && typeof window.PetitMot.Audio.speak === 'function') {
+            window.PetitMot.Audio.speak(lineData.fr);
+          }
         });
+
+        lineEl.appendChild(frRow);
+
+        /* ── English translation: always visible, starts dimmed ── */
+        var enEl = document.createElement('div');
+        enEl.className = 'journal-line-en journal-line-en--dimmed';
+        enEl.textContent = lineData.en;
+
+        /* Tap English → toggle dimmed/revealed */
+        enEl.addEventListener('click', function (e) {
+          e.stopPropagation(); // don't bubble to frRow
+          if (enEl.classList.contains('journal-line-en--dimmed')) {
+            enEl.classList.remove('journal-line-en--dimmed');
+            enEl.classList.add('journal-line-en--revealed');
+          } else {
+            enEl.classList.remove('journal-line-en--revealed');
+            enEl.classList.add('journal-line-en--dimmed');
+          }
+        });
+
+        lineEl.appendChild(enEl);
 
         transcript.appendChild(lineEl);
         lineElements.push(lineEl);
@@ -148,7 +185,7 @@ window.PetitMot.Journal = (function () {
       }
     }
 
-    /* ── Speak current sentence, poll for completion ─────── */
+    /* ── Speak current sentence in auto-play mode ─────────── */
     function speakCurrent() {
       if (currentSentence >= lines.length) {
         resetPlayback();
@@ -172,8 +209,7 @@ window.PetitMot.Journal = (function () {
         }
       }
 
-      /* Poll every 300ms until speechSynthesis is no longer speaking.
-         Start after 400ms to allow for audio.js cancel+50ms delay + utterance start. */
+      /* Poll every 300ms until speechSynthesis is no longer speaking. */
       clearPoll();
       pollInterval = setInterval(function () {
         if (!isPlaying) { clearPoll(); return; }
