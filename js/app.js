@@ -43,6 +43,10 @@ window.PetitMot.App = (function () {
       if (window.PetitMot.Calendar && typeof window.PetitMot.Calendar.render === 'function') {
         window.PetitMot.Calendar.render();
       }
+    } else if (viewName === 'guide') {
+      if (window.PetitMot.Guide && typeof window.PetitMot.Guide.init === 'function') {
+        window.PetitMot.Guide.init();
+      }
     }
   }
 

@@ -254,6 +254,19 @@ window.PetitMot.Calendar = (function () {
     wrapper.appendChild(_buildGrid(todayDay));
     wrapper.appendChild(_buildWeekPreview(todayDay));
 
+    // Guide button
+    var btnGuide = document.createElement('button');
+    btnGuide.className = 'btn-guide';
+    btnGuide.setAttribute('data-fr', 'Guide de prononciation');
+    btnGuide.setAttribute('data-en', 'Pronunciation guide');
+    btnGuide.textContent = 'Guide de prononciation';
+    btnGuide.addEventListener('click', function () {
+      if (window.PetitMot.App && typeof window.PetitMot.App.showView === 'function') {
+        window.PetitMot.App.showView('guide');
+      }
+    });
+    wrapper.appendChild(btnGuide);
+
     container.appendChild(wrapper);
   }
 

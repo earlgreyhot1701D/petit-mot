@@ -518,3 +518,238 @@ button, .day-tile, .flashcard, [role="button"] {
   display: block;
   margin: 0 auto 0.75rem;
 }
+
+/* ── Guide View ────────────────────────────────────────────── */
+.guide-view {
+  padding: 1rem 1rem 2rem;
+  max-width: 460px;
+  margin: 0 auto;
+  overflow-y: auto;
+  font-family: 'Nunito', sans-serif;
+}
+
+.guide-section {
+  margin-bottom: 2rem;
+}
+
+.guide-section-heading {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--green);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--cream-deep);
+  padding-bottom: 0.5rem;
+}
+
+.guide-subsection-heading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin: 1rem 0 0.5rem;
+}
+
+.guide-subheading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.guide-note {
+  font-size: 13px;
+  color: var(--ink-faint);
+  font-style: italic;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--ochre-soft);
+  border-radius: 6px;
+  border-left: 3px solid var(--ochre);
+}
+
+/* Sound entries */
+.sound-entry {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cream-deep);
+}
+
+.sound-entry:last-child { border-bottom: none; }
+
+.sound-name {
+  font-weight: 700;
+  color: var(--green);
+  font-size: 16px;
+}
+
+.sound-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.sound-example {
+  font-style: italic;
+  color: var(--ochre-dim);
+  cursor: pointer;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+/* Letter grid */
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.letter-cell {
+  text-align: center;
+  padding: 8px 4px;
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--cream-deep);
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.letter-cell:active { background: var(--green-pale); }
+
+.letter-char {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green);
+  font-family: 'Playfair Display', serif;
+}
+
+.letter-pronunciation {
+  font-size: 10px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Number grid */
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.number-cell {
+  text-align: center;
+  padding: 8px 4px;
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--cream-deep);
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.number-cell:active { background: var(--green-pale); }
+
+.number-digit {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green);
+  font-family: 'Playfair Display', serif;
+}
+
+.number-word {
+  font-size: 10px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Cognate tables */
+.cognate-table { width: 100%; }
+
+.cognate-row {
+  display: flex;
+  border-bottom: 1px solid var(--cream-deep);
+  padding: 8px 0;
+  gap: 8px;
+}
+
+.cognate-row:last-child { border-bottom: none; }
+
+.cognate-header {
+  border-bottom: 2px solid var(--cream-deep) !important;
+  margin-bottom: 4px;
+}
+
+.cognate-fr {
+  flex: 1;
+  font-weight: 600;
+  color: var(--green);
+  font-size: 14px;
+}
+
+.cognate-es {
+  flex: 1;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.false-friend-row {
+  display: flex;
+  border-bottom: 1px solid var(--cream-deep);
+  padding: 8px 0;
+  gap: 8px;
+}
+
+.false-friend-row:last-child { border-bottom: none; }
+
+.false-friend-means {
+  flex: 1;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.false-friend-not {
+  flex: 1;
+  color: var(--rose);
+  font-size: 12px;
+}
+
+/* Guide button on calendar */
+.btn-guide {
+  background: var(--cream-deep);
+  color: var(--ink-soft);
+  border: 1px solid var(--cream-deep);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 1rem;
+  min-height: 44px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-guide:hover {
+  background: var(--cream);
+  border-color: var(--green-pale);
+}
+
+/* Journal French line row */
+.journal-line-fr {
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
