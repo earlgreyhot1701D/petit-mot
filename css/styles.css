@@ -749,7 +749,6 @@ button, .day-tile, .flashcard, [role="button"] {
 /* Journal French line row */
 .journal-line-fr {
   cursor: pointer;
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
+  display: block;
+  line-height: 1.5;
 }
