@@ -248,6 +248,296 @@ window.PetitMot.Guide = (function () {
     return section;
   }
 
+  /* ── Section 5: À quoi s'attendre — Scenario Cards ─────────── */
+  function buildScenarios() {
+    var section = makeEl('div', 'guide-section');
+    var h = makeEl('h2', 'guide-section-heading');
+    h.setAttribute('data-fr', "À quoi s'attendre");
+    h.setAttribute('data-en', 'What to expect');
+    h.textContent = "À quoi s'attendre";
+    section.appendChild(h);
+
+    var scenarios = [
+      {
+        id: 'restaurant',
+        title: 'Au restaurant',
+        theySay: [
+          'Vous avez réservé ?',
+          'Combien de personnes ?',
+          'Vous désirez ?',
+          'Et comme boisson ?'
+        ],
+        youSee: 'A host standing at the entrance with a reservation book. Tables with paper placemats and a handwritten menu on a chalkboard.',
+        respond: [
+          'Oui, au nom de…',
+          'Une table pour deux, s\'il vous plaît.',
+          'Je voudrais le plat du jour.',
+          'L\'addition, s\'il vous plaît.'
+        ],
+        cultural: 'Always greet with "Bonjour" before making any request. Wait to be seated — don\'t choose your own table. Tipping is not expected but rounding up is appreciated.'
+      },
+      {
+        id: 'boulangerie',
+        title: 'À la boulangerie',
+        theySay: [
+          'Bonjour ! Vous désirez ?',
+          'Et avec ceci ?',
+          'Ce sera tout ?'
+        ],
+        youSee: 'A glass counter displaying rows of baguettes, croissants, and pastries. A small queue of locals waiting patiently.',
+        respond: [
+          'Bonjour ! Une baguette, s\'il vous plaît.',
+          'Et un croissant aussi.',
+          'Oui, c\'est tout. Merci !'
+        ],
+        cultural: 'Say "Bonjour" when entering and "Au revoir" when leaving — even if you don\'t buy anything. Point at items if you forget the name.'
+      },
+      {
+        id: 'supermarche',
+        title: 'Au supermarché',
+        theySay: [
+          'Vous avez la carte de fidélité ?',
+          'Vous avez besoin d\'un sac ?',
+          'Ça fait douze euros cinquante.'
+        ],
+        youSee: 'Self-checkout machines with French prompts. Reusable bags for sale near the register. Produce that you must weigh and label yourself.',
+        respond: [
+          'Non, merci.',
+          'Oui, un sac s\'il vous plaît.',
+          'Je peux payer par carte ?'
+        ],
+        cultural: 'Bring your own bag — plastic bags cost extra. You must weigh produce yourself at the scale in the produce section. Bag your own groceries quickly.'
+      },
+      {
+        id: 'metro',
+        title: 'Dans le métro',
+        theySay: [
+          'Attention à la fermeture des portes.',
+          'Prochain arrêt : Châtelet.',
+          'Pardon, vous descendez ?'
+        ],
+        youSee: 'Ticket machines with language options. Color-coded line maps on the wall. Double doors you may need to lift a handle or press a button to open.',
+        respond: [
+          'Un ticket, s\'il vous plaît.',
+          'Excusez-moi, pour aller à…?',
+          'Oui, je descends. Pardon !'
+        ],
+        cultural: 'Let passengers exit before boarding. Keep right on escalators so others can pass on the left. Avoid talking loudly — the métro is generally quiet.'
+      },
+      {
+        id: 'street',
+        title: 'Dans la rue',
+        theySay: [
+          'Excusez-moi, vous avez l\'heure ?',
+          'Vous cherchez quelque chose ?',
+          'Attention !'
+        ],
+        youSee: 'Narrow sidewalks shared with café terraces. Pedestrian crossings without countdown timers. Street signs on building corners rather than on posts.',
+        respond: [
+          'Il est quatorze heures.',
+          'Je cherche la station de métro.',
+          'Pardon, où est la rue…?'
+        ],
+        cultural: 'Greet shopkeepers when entering any small store. Cross streets carefully — drivers may not stop at crosswalks. "Pardon" works for both "excuse me" and "sorry."'
+      }
+    ];
+
+    scenarios.forEach(function (scenario) {
+      section.appendChild(buildScenarioCard(scenario));
+    });
+
+    /* ── Supplementary content subsections ──────────────────── */
+
+    // Numbers in the wild
+    var numbersHeading = makeEl('h3', 'guide-subsection-heading', 'Numbers in the wild');
+    section.appendChild(numbersHeading);
+
+    var numbersNote = makeEl('div', 'guide-note');
+    var numbersIntro = makeEl('p', '', 'Numbers pop up everywhere in Paris. Here are common places you\'ll encounter them:');
+    numbersNote.appendChild(numbersIntro);
+
+    var numberExamples = [
+      { context: 'Price tags', example: '3,50 € — "trois euros cinquante" (comma = decimal in France)' },
+      { context: 'Addresses', example: '12, rue de Rivoli — "douze, rue de Rivoli"' },
+      { context: 'Métro lines', example: 'Ligne 6 — "ligne six" (lines are numbered 1–14)' },
+      { context: 'Phone numbers', example: '01 42 36 … — spoken in pairs: "zéro un, quarante-deux, trente-six…"' }
+    ];
+
+    var numbersList = makeEl('ul', '');
+    numberExamples.forEach(function (item) {
+      var li = makeEl('li', '');
+      var strong = makeEl('strong', '', item.context + ': ');
+      li.appendChild(strong);
+      li.appendChild(document.createTextNode(item.example));
+      numbersList.appendChild(li);
+    });
+    numbersNote.appendChild(numbersList);
+    section.appendChild(numbersNote);
+
+    // Gendered nouns
+    var genderHeading = makeEl('h3', 'guide-subsection-heading', 'Gendered nouns');
+    section.appendChild(genderHeading);
+
+    var genderNote = makeEl('div', 'guide-note');
+    var genderIntro = makeEl('p', '', 'Every French noun has a gender. The article tells you which:');
+    genderNote.appendChild(genderIntro);
+
+    var genderExamples = [
+      { article: 'le', noun: 'café', english: 'the coffee (masculine)' },
+      { article: 'la', noun: 'boulangerie', english: 'the bakery (feminine)' },
+      { article: 'les', noun: 'croissants', english: 'the croissants (plural)' },
+      { article: 'le', noun: 'métro', english: 'the metro (masculine)' },
+      { article: 'la', noun: 'gare', english: 'the train station (feminine)' }
+    ];
+
+    var genderList = makeEl('ul', '');
+    genderExamples.forEach(function (item) {
+      var li = makeEl('li', '');
+      var articleSpan = makeEl('strong', '', item.article + ' ' + item.noun);
+      li.appendChild(articleSpan);
+      li.appendChild(document.createTextNode(' — ' + item.english));
+      genderList.appendChild(li);
+    });
+    genderNote.appendChild(genderList);
+
+    var genderTip = makeEl('p', '', 'Tip: learn the article with the noun as one unit — "la boulangerie," not just "boulangerie."');
+    genderNote.appendChild(genderTip);
+    section.appendChild(genderNote);
+
+    // Politeness rules
+    var politeHeading = makeEl('h3', 'guide-subsection-heading', 'Politeness rules');
+    section.appendChild(politeHeading);
+
+    var politeNote = makeEl('div', 'guide-note');
+    var politeIntro = makeEl('p', '', 'French politeness is non-negotiable. Two rules to never forget:');
+    politeNote.appendChild(politeIntro);
+
+    var politeList = makeEl('ol', '');
+
+    var greetingLi = makeEl('li', '');
+    var greetingStrong = makeEl('strong', '', 'Greeting first: ');
+    greetingLi.appendChild(greetingStrong);
+    greetingLi.appendChild(document.createTextNode('Always say "Bonjour" (or "Bonsoir" after 6 pm) before asking anything — in shops, restaurants, the métro booth, everywhere. Skipping the greeting is considered rude.'));
+    politeList.appendChild(greetingLi);
+
+    var vousLi = makeEl('li', '');
+    var vousStrong = makeEl('strong', '', 'Vous vs tu: ');
+    vousLi.appendChild(vousStrong);
+    vousLi.appendChild(document.createTextNode('Use "vous" (formal you) with strangers, shopkeepers, and anyone older. "Tu" (informal you) is reserved for friends, children, and people who invite you to use it. When in doubt, use "vous."'));
+    politeList.appendChild(vousLi);
+
+    politeNote.appendChild(politeList);
+    section.appendChild(politeNote);
+
+    return section;
+  }
+
+  function buildScenarioCard(scenario) {
+    var card = makeEl('div', 'scenario-card');
+
+    // Header button
+    var header = makeEl('button', 'scenario-card__header');
+    header.setAttribute('aria-expanded', 'false');
+
+    var title = makeEl('span', 'scenario-card__title', scenario.title);
+    var chevron = makeEl('span', 'scenario-card__chevron', '\u25B8');
+    chevron.setAttribute('aria-hidden', 'true');
+
+    header.appendChild(title);
+    header.appendChild(chevron);
+
+    // Body (hidden by default)
+    var body = makeEl('div', 'scenario-card__body');
+    body.hidden = true;
+
+    // "What they'll say" subsection
+    body.appendChild(buildPhraseSubsection("What they'll say", scenario.theySay));
+
+    // "What you'll see" subsection
+    var seeSub = makeEl('div', 'scenario-card__subsection');
+    seeSub.appendChild(makeEl('h4', 'scenario-card__sub-title', "What you'll see"));
+    seeSub.appendChild(makeEl('p', '', scenario.youSee));
+    body.appendChild(seeSub);
+
+    // "How to respond" subsection
+    body.appendChild(buildPhraseSubsection('How to respond', scenario.respond));
+
+    // "Cultural notes" subsection
+    var culturalSub = makeEl('div', 'scenario-card__subsection');
+    culturalSub.appendChild(makeEl('h4', 'scenario-card__sub-title', 'Cultural notes'));
+    var culturalNote = makeEl('p', 'guide-note', scenario.cultural);
+    culturalSub.appendChild(culturalNote);
+    body.appendChild(culturalSub);
+
+    // Toggle expand/collapse
+    header.addEventListener('click', function () {
+      var expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', String(!expanded));
+      body.hidden = expanded;
+      chevron.textContent = expanded ? '\u25B8' : '\u25BE';
+    });
+
+    card.appendChild(header);
+    card.appendChild(body);
+    return card;
+  }
+
+  function buildPhraseSubsection(titleText, phrases) {
+    var sub = makeEl('div', 'scenario-card__subsection');
+    sub.appendChild(makeEl('h4', 'scenario-card__sub-title', titleText));
+
+    phrases.forEach(function (phrase) {
+      var row = makeEl('div', 'scenario-card__phrase');
+      row.style.minHeight = '44px';
+
+      var text = makeEl('span', 'scenario-card__phrase-text', phrase);
+      row.appendChild(text);
+
+      var speaker = makeEl('span', 'scenario-card__speaker', '\uD83D\uDD0A');
+      speaker.setAttribute('aria-label', 'Écouter');
+      row.appendChild(speaker);
+
+      row.addEventListener('click', function () {
+        if (window.PetitMot.Audio && typeof window.PetitMot.Audio.speak === 'function') {
+          // Remove playing state from any other phrase
+          var allPlaying = document.querySelectorAll('.scenario-card__phrase--playing');
+          for (var i = 0; i < allPlaying.length; i++) {
+            allPlaying[i].classList.remove('scenario-card__phrase--playing');
+          }
+          // Mark this phrase as playing
+          row.classList.add('scenario-card__phrase--playing');
+
+          window.PetitMot.Audio.speak(phrase);
+
+          // Listen for speech end to remove playing state
+          try {
+            var checkEnd = setInterval(function () {
+              if (!window.speechSynthesis || !window.speechSynthesis.speaking) {
+                row.classList.remove('scenario-card__phrase--playing');
+                clearInterval(checkEnd);
+              }
+            }, 200);
+          } catch (e) {
+            // Fallback: remove after 3 seconds
+            setTimeout(function () {
+              row.classList.remove('scenario-card__phrase--playing');
+            }, 3000);
+          }
+        } else {
+          // Audio unavailable — show inline indicator
+          if (!row.querySelector('.scenario-card__audio-unavailable')) {
+            var indicator = makeEl('span', 'scenario-card__audio-unavailable', 'audio unavailable');
+            row.appendChild(indicator);
+          }
+        }
+      });
+
+      sub.appendChild(row);
+    });
+
+    return sub;
+  }
+
   /* ── Public: init ─────────────────────────────────────────── */
   function init() {
     var container = document.getElementById('view-guide');
@@ -276,6 +566,7 @@ window.PetitMot.Guide = (function () {
     view.appendChild(buildAlphabet());
     view.appendChild(buildChiffres());
     view.appendChild(buildPontEspagnol());
+    view.appendChild(buildScenarios());
 
     container.appendChild(view);
 

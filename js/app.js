@@ -47,6 +47,10 @@ window.PetitMot.App = (function () {
       if (window.PetitMot.Guide && typeof window.PetitMot.Guide.init === 'function') {
         window.PetitMot.Guide.init();
       }
+    } else if (viewName === 'dictionary') {
+      if (window.PetitMot.Dictionary && typeof window.PetitMot.Dictionary.init === 'function') {
+        window.PetitMot.Dictionary.init();
+      }
     }
   }
 
@@ -153,6 +157,29 @@ window.PetitMot.App = (function () {
     });
     splash.appendChild(pills);
     elements.push(pills);
+
+    // 9. Quick-link buttons row (Dictionary + Guide)
+    var quickLinks = document.createElement('div');
+    quickLinks.className = 'splash-element splash-quick-links';
+
+    var btnDict = document.createElement('button');
+    btnDict.className = 'btn-guide';
+    btnDict.textContent = 'Dictionnaire';
+    btnDict.addEventListener('click', function () {
+      showView('dictionary');
+    });
+
+    var btnGuide = document.createElement('button');
+    btnGuide.className = 'btn-guide';
+    btnGuide.textContent = 'Guide';
+    btnGuide.addEventListener('click', function () {
+      showView('guide');
+    });
+
+    quickLinks.appendChild(btnDict);
+    quickLinks.appendChild(btnGuide);
+    splash.appendChild(quickLinks);
+    elements.push(quickLinks);
 
     splashView.appendChild(splash);
 

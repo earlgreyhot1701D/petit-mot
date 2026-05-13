@@ -31,6 +31,20 @@ The full curriculum covers 7 days of Week 1 content across real Paris scenarios:
 
 ---
 
+## Reference Tools
+
+- **Dictionary** — A searchable, sortable vocabulary reference that aggregates all curriculum words plus bonus survival words in one place.
+- **Guide** — A pronunciation and cultural reference covering sounds, grammar patterns, and real-world Paris scenarios.
+
+The Guide includes the following reference categories:
+
+1. Pronunciation sounds
+2. Alphabet
+3. Numbers
+4. Spanish-French cognate bridge
+
+---
+
 ## How It's Built
 
 ### Deterministic by design
@@ -74,7 +88,9 @@ petit-mot/
 ├── js/
 │   ├── app.js          # View router, screen state
 │   ├── curriculum.js   # Static content: all days, words, stories, journals
+│   ├── dictionary.js   # Searchable vocabulary reference with bonus words
 │   ├── flashcards.js   # Flashcard view
+│   ├── guide.js        # Pronunciation guide and scenario walkthroughs
 │   ├── stories.js      # Story read-along view
 │   ├── journal.js      # Journal playback
 │   ├── audio.js        # Web Speech API wrapper

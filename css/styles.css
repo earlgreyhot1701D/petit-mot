@@ -206,6 +206,19 @@ button, .day-tile, .flashcard, [role="button"] {
   cursor: help;
 }
 
+/* ── Splash Quick-Links ────────────────────────────────────── */
+.splash-quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+
+.splash-quick-links .btn-guide {
+  width: auto;
+  display: inline-block;
+}
+
 /* ── Calendar View ── */
 .calendar-view { padding: 1.5rem; max-width: 460px; margin: 0 auto; }
 .calendar-header { margin-bottom: 1.25rem; }
@@ -751,4 +764,270 @@ button, .day-tile, .flashcard, [role="button"] {
   cursor: pointer;
   display: block;
   line-height: 1.5;
+}
+
+/* ── Dictionary View ───────────────────────────────────────── */
+.dictionary-view {
+  padding: 1rem 1rem 2rem;
+  max-width: 460px;
+  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
+}
+
+.dict-controls {
+  margin-bottom: 1rem;
+}
+
+.dict-search {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  border: 1px solid var(--cream-deep);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink-soft);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.dict-search::placeholder {
+  color: var(--ink-faint);
+}
+
+.dict-search:focus {
+  border-color: var(--green-light);
+}
+
+.dict-sort-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.dict-sort-btn {
+  flex: 1;
+  background: var(--cream-deep);
+  color: var(--ink-soft);
+  border: 1px solid var(--cream-deep);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.dict-sort-btn:hover {
+  background: var(--cream);
+  border-color: var(--green-pale);
+}
+
+.dict-sort-btn--active {
+  background: var(--green-pale);
+  color: var(--green);
+  border-color: rgba(91, 115, 85, 0.25);
+  font-weight: 700;
+}
+
+.dict-count {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+.dict-list {
+  margin-top: 0.5rem;
+}
+
+.dict-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  min-height: 44px;
+  border-bottom: 1px solid var(--cream-deep);
+  transition: background 0.15s;
+}
+
+.dict-entry:last-child {
+  border-bottom: none;
+}
+
+.dict-entry:active {
+  background: var(--green-pale);
+}
+
+.dict-emoji {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.dict-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.dict-french {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.dict-english {
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+
+.dict-source {
+  font-size: 11px;
+  color: var(--ink-faint);
+  background: var(--cream-deep);
+  border-radius: 4px;
+  padding: 2px 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dict-speaker {
+  font-size: 18px;
+  cursor: pointer;
+  min-width: 24px;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dict-empty {
+  text-align: center;
+  color: var(--ink-faint);
+  font-style: italic;
+  font-size: 14px;
+  padding: 2rem 1rem;
+}
+
+/* ── Scenario Cards ────────────────────────────────────────── */
+.scenario-card {
+  margin: 0.75rem 0;
+  border-radius: 12px;
+  border: 1px solid var(--cream-deep);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.scenario-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  text-align: left;
+}
+
+.scenario-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--green);
+}
+
+.scenario-card__chevron {
+  font-size: 14px;
+  color: var(--ink-faint);
+  transition: transform 300ms ease;
+  display: inline-block;
+}
+
+.scenario-card__header[aria-expanded="true"] .scenario-card__chevron {
+  transform: rotate(90deg);
+}
+
+.scenario-card__body {
+  padding: 0 16px 16px;
+}
+
+.scenario-card__subsection {
+  margin-bottom: 1rem;
+}
+
+.scenario-card__subsection:last-child {
+  margin-bottom: 0;
+}
+
+.scenario-card__sub-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.scenario-card__phrase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--cream-deep);
+  cursor: pointer;
+  transition: background 300ms ease;
+}
+
+.scenario-card__phrase:last-child {
+  border-bottom: none;
+}
+
+.scenario-card__phrase-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: var(--ink);
+  font-style: italic;
+  flex: 1;
+}
+
+.scenario-card__speaker {
+  font-size: 16px;
+  margin-left: 8px;
+  opacity: 0.5;
+  transition: opacity 300ms ease;
+}
+
+.scenario-card__phrase:hover .scenario-card__speaker {
+  opacity: 1;
+}
+
+.scenario-card__phrase--playing {
+  background: var(--ochre-soft);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 0 -10px;
+}
+
+.scenario-card__phrase--playing .scenario-card__speaker {
+  opacity: 1;
+  animation: pulse-speaker 1s ease-in-out infinite;
+}
+
+@keyframes pulse-speaker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }

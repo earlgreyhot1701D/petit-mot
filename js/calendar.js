@@ -267,6 +267,19 @@ window.PetitMot.Calendar = (function () {
     });
     wrapper.appendChild(btnGuide);
 
+    // Dictionary button
+    var btnDict = document.createElement('button');
+    btnDict.className = 'btn-guide';
+    btnDict.setAttribute('data-fr', 'Dictionnaire');
+    btnDict.setAttribute('data-en', 'Dictionary');
+    btnDict.textContent = 'Dictionnaire';
+    btnDict.addEventListener('click', function () {
+      if (window.PetitMot.App && typeof window.PetitMot.App.showView === 'function') {
+        window.PetitMot.App.showView('dictionary');
+      }
+    });
+    wrapper.appendChild(btnDict);
+
     container.appendChild(wrapper);
   }
 
