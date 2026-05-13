@@ -1,8 +1,10 @@
 {
   "name": "petit mot",
   "short_name": "petit mot",
+  "start_url": "/",
   "icons": [
-    { "src": "/img/favicon.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "/img/favicon.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/img/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ],
   "theme_color": "#5B7355",
   "background_color": "#F2E8D5",
