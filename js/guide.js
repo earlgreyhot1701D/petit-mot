@@ -262,17 +262,17 @@ window.PetitMot.Guide = (function () {
         id: 'restaurant',
         title: 'Au restaurant',
         theySay: [
-          'Vous avez réservé ?',
-          'Combien de personnes ?',
-          'Vous désirez ?',
-          'Et comme boisson ?'
+          { fr: 'Vous avez réservé ?', en: 'Do you have a reservation?' },
+          { fr: 'Combien de personnes ?', en: 'How many people?' },
+          { fr: 'Vous désirez ?', en: 'What would you like?' },
+          { fr: 'Et comme boisson ?', en: 'And to drink?' }
         ],
         youSee: 'A host standing at the entrance with a reservation book. Tables with paper placemats and a handwritten menu on a chalkboard.',
         respond: [
-          'Oui, au nom de…',
-          'Une table pour deux, s\'il vous plaît.',
-          'Je voudrais le plat du jour.',
-          'L\'addition, s\'il vous plaît.'
+          { fr: 'Oui, au nom de…', en: 'Yes, under the name of…' },
+          { fr: 'Une table pour deux, s\'il vous plaît.', en: 'A table for two, please.' },
+          { fr: 'Je voudrais le plat du jour.', en: 'I\'d like the dish of the day.' },
+          { fr: 'L\'addition, s\'il vous plaît.', en: 'The check, please.' }
         ],
         cultural: 'Always greet with "Bonjour" before making any request. Wait to be seated — don\'t choose your own table. Tipping is not expected but rounding up is appreciated.'
       },
@@ -280,15 +280,15 @@ window.PetitMot.Guide = (function () {
         id: 'boulangerie',
         title: 'À la boulangerie',
         theySay: [
-          'Bonjour ! Vous désirez ?',
-          'Et avec ceci ?',
-          'Ce sera tout ?'
+          { fr: 'Bonjour ! Vous désirez ?', en: 'Hello! What would you like?' },
+          { fr: 'Et avec ceci ?', en: 'And with that?' },
+          { fr: 'Ce sera tout ?', en: 'Will that be all?' }
         ],
         youSee: 'A glass counter displaying rows of baguettes, croissants, and pastries. A small queue of locals waiting patiently.',
         respond: [
-          'Bonjour ! Une baguette, s\'il vous plaît.',
-          'Et un croissant aussi.',
-          'Oui, c\'est tout. Merci !'
+          { fr: 'Bonjour ! Une baguette, s\'il vous plaît.', en: 'Hello! A baguette, please.' },
+          { fr: 'Et un croissant aussi.', en: 'And a croissant too.' },
+          { fr: 'Oui, c\'est tout. Merci !', en: 'Yes, that\'s all. Thanks!' }
         ],
         cultural: 'Say "Bonjour" when entering and "Au revoir" when leaving — even if you don\'t buy anything. Point at items if you forget the name.'
       },
@@ -296,15 +296,15 @@ window.PetitMot.Guide = (function () {
         id: 'supermarche',
         title: 'Au supermarché',
         theySay: [
-          'Vous avez la carte de fidélité ?',
-          'Vous avez besoin d\'un sac ?',
-          'Ça fait douze euros cinquante.'
+          { fr: 'Vous avez la carte de fidélité ?', en: 'Do you have a loyalty card?' },
+          { fr: 'Vous avez besoin d\'un sac ?', en: 'Do you need a bag?' },
+          { fr: 'Ça fait douze euros cinquante.', en: 'That\'s twelve euros fifty.' }
         ],
         youSee: 'Self-checkout machines with French prompts. Reusable bags for sale near the register. Produce that you must weigh and label yourself.',
         respond: [
-          'Non, merci.',
-          'Oui, un sac s\'il vous plaît.',
-          'Je peux payer par carte ?'
+          { fr: 'Non, merci.', en: 'No, thanks.' },
+          { fr: 'Oui, un sac s\'il vous plaît.', en: 'Yes, a bag please.' },
+          { fr: 'Je peux payer par carte ?', en: 'Can I pay by card?' }
         ],
         cultural: 'Bring your own bag — plastic bags cost extra. You must weigh produce yourself at the scale in the produce section. Bag your own groceries quickly.'
       },
@@ -312,15 +312,15 @@ window.PetitMot.Guide = (function () {
         id: 'metro',
         title: 'Dans le métro',
         theySay: [
-          'Attention à la fermeture des portes.',
-          'Prochain arrêt : Châtelet.',
-          'Pardon, vous descendez ?'
+          { fr: 'Attention à la fermeture des portes.', en: 'Watch out, the doors are closing.' },
+          { fr: 'Prochain arrêt : Châtelet.', en: 'Next stop: Châtelet.' },
+          { fr: 'Pardon, vous descendez ?', en: 'Excuse me, are you getting off?' }
         ],
         youSee: 'Ticket machines with language options. Color-coded line maps on the wall. Double doors you may need to lift a handle or press a button to open.',
         respond: [
-          'Un ticket, s\'il vous plaît.',
-          'Excusez-moi, pour aller à…?',
-          'Oui, je descends. Pardon !'
+          { fr: 'Un ticket, s\'il vous plaît.', en: 'One ticket, please.' },
+          { fr: 'Excusez-moi, pour aller à…?', en: 'Excuse me, how do I get to…?' },
+          { fr: 'Oui, je descends. Pardon !', en: 'Yes, I\'m getting off. Excuse me!' }
         ],
         cultural: 'Let passengers exit before boarding. Keep right on escalators so others can pass on the left. Avoid talking loudly — the métro is generally quiet.'
       },
@@ -328,15 +328,15 @@ window.PetitMot.Guide = (function () {
         id: 'street',
         title: 'Dans la rue',
         theySay: [
-          'Excusez-moi, vous avez l\'heure ?',
-          'Vous cherchez quelque chose ?',
-          'Attention !'
+          { fr: 'Excusez-moi, vous avez l\'heure ?', en: 'Excuse me, do you have the time?' },
+          { fr: 'Vous cherchez quelque chose ?', en: 'Are you looking for something?' },
+          { fr: 'Attention !', en: 'Watch out!' }
         ],
         youSee: 'Narrow sidewalks shared with café terraces. Pedestrian crossings without countdown timers. Street signs on building corners rather than on posts.',
         respond: [
-          'Il est quatorze heures.',
-          'Je cherche la station de métro.',
-          'Pardon, où est la rue…?'
+          { fr: 'Il est quatorze heures.', en: 'It\'s two o\'clock.' },
+          { fr: 'Je cherche la station de métro.', en: 'I\'m looking for the metro station.' },
+          { fr: 'Pardon, où est la rue…?', en: 'Excuse me, where is the street…?' }
         ],
         cultural: 'Greet shopkeepers when entering any small store. Cross streets carefully — drivers may not stop at crosswalks. "Pardon" works for both "excuse me" and "sorry."'
       }
@@ -486,12 +486,23 @@ window.PetitMot.Guide = (function () {
     var sub = makeEl('div', 'scenario-card__subsection');
     sub.appendChild(makeEl('h4', 'scenario-card__sub-title', titleText));
 
-    phrases.forEach(function (phrase) {
+    phrases.forEach(function (phraseData) {
+      var frText = typeof phraseData === 'string' ? phraseData : phraseData.fr;
+      var enText = typeof phraseData === 'string' ? null : phraseData.en;
+
       var row = makeEl('div', 'scenario-card__phrase');
       row.style.minHeight = '44px';
 
-      var text = makeEl('span', 'scenario-card__phrase-text', phrase);
-      row.appendChild(text);
+      var textWrap = makeEl('div', 'scenario-card__phrase-wrap');
+      var text = makeEl('span', 'scenario-card__phrase-text', frText);
+      textWrap.appendChild(text);
+
+      if (enText) {
+        var enSpan = makeEl('span', 'scenario-card__phrase-en', enText);
+        textWrap.appendChild(enSpan);
+      }
+
+      row.appendChild(textWrap);
 
       var speaker = makeEl('span', 'scenario-card__speaker', '\uD83D\uDD0A');
       speaker.setAttribute('aria-label', 'Écouter');
@@ -507,7 +518,7 @@ window.PetitMot.Guide = (function () {
           // Mark this phrase as playing
           row.classList.add('scenario-card__phrase--playing');
 
-          window.PetitMot.Audio.speak(phrase);
+          window.PetitMot.Audio.speak(frText);
 
           // Listen for speech end to remove playing state
           try {

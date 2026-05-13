@@ -1004,6 +1004,21 @@ button, .day-tile, .flashcard, [role="button"] {
   flex: 1;
 }
 
+.scenario-card__phrase-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.scenario-card__phrase-en {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-style: normal;
+  margin-top: 2px;
+}
+
 .scenario-card__speaker {
   font-size: 16px;
   margin-left: 8px;
